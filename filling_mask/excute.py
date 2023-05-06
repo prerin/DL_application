@@ -4,10 +4,10 @@ import numpy as np
 import MeCab
 import gradio as gr
 
-config = BertConfig.from_json_file('./Japanese_L-12_H-768_A-12_E-30_BPE/bert_config.json')
+config = BertConfig.from_json_file('./data/Japanese_L-12_H-768_A-12_E-30_BPE/bert_config.json')
 
-model = BertForMaskedLM.from_pretrained('./Japanese_L-12_H-768_A-12_E-30_BPE/pytorch_model.bin', config=config)
-bert_tokenizer = BertTokenizer('./Japanese_L-12_H-768_A-12_E-30_BPE/vocab.txt',
+model = BertForMaskedLM.from_pretrained('./data/Japanese_L-12_H-768_A-12_E-30_BPE/pytorch_model.bin', config=config)
+bert_tokenizer = BertTokenizer('./data/Japanese_L-12_H-768_A-12_E-30_BPE/vocab.txt',
                                 do_lower_case=False, do_basic_tokenize=False)
 
 def preprocessing(pre_text):
